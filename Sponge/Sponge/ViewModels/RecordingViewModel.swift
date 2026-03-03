@@ -280,46 +280,42 @@ class RecordingViewModel: ObservableObject {
         Task { @MainActor in
             classViewModel.addRecording(recording)
 
-            // Generate class notes and enhanced summaries if enabled
-            if self.autoGenerateClassNotes && !transcript.isEmpty {
-                await self.generateEnhancedContent(for: recording, classModel: classModel, classViewModel: classViewModel)
-            } else {
-                // Export PDF immediately if notes generation is disabled
-                self.exportPDF(for: recording, classModel: classModel, classViewModel: classViewModel)
+            // Step 1: Run the on-device offline pass first so AI notes are generated
+            // from the best available transcript, not the raw live result.
+            // Battery-save mode (skipGeminiUpgrade=true) already did this pass.
+            if !skipGeminiUpgrade {
+                await self.runOfflineTranscriptUpgrade(for: recording, audioURL: audioURL)
             }
 
-            // For live-recorded files, run the on-device SpeechAnalyzer offline pass automatically
-            // (free, private, better accuracy than the live progressive transcript).
-            // Gemini audio transcription is NOT auto-triggered — the user initiates it manually
-            // from the recording detail view via "Improve Transcript with AI".
-            if !skipGeminiUpgrade {
-                self.runOfflineTranscriptUpgrade(for: recording, audioURL: audioURL, classModel: classModel, classViewModel: classViewModel)
+            // Step 2: Generate AI notes from the now-improved transcript
+            if self.autoGenerateClassNotes && !recording.transcriptText.isEmpty {
+                await self.generateEnhancedContent(for: recording, classModel: classModel, classViewModel: classViewModel)
+            } else {
+                self.exportPDF(for: recording, classModel: classModel, classViewModel: classViewModel)
             }
         }
     }
 
     // MARK: - Post-Processing Pipeline
 
-    /// Silently upgrades a live-recorded transcript using the on-device SpeechAnalyzer pass.
-    /// Runs automatically after every live recording. Free and private.
-    private func runOfflineTranscriptUpgrade(for recording: SDRecording, audioURL: URL, classModel: SDClass?, classViewModel: ClassViewModel?) {
-        Task { @MainActor in
-            self.isImprovingTranscript = true
-            self.toastMessage = ToastMessage(message: "Refining transcript on-device...", icon: "waveform.badge.magnifyingglass", type: .info)
+    /// Runs the on-device SpeechAnalyzer offline pass and awaits completion.
+    /// Called before AI note generation so notes use the best transcript available.
+    @MainActor
+    private func runOfflineTranscriptUpgrade(for recording: SDRecording, audioURL: URL) async {
+        isImprovingTranscript = true
+        toastMessage = ToastMessage(message: "Refining transcript on-device...", icon: "waveform.badge.magnifyingglass", type: .info)
 
-            do {
-                let offlineTranscript = try await transcriptionService.transcribeAudioFile(url: audioURL)
-                if !offlineTranscript.isEmpty {
-                    recording.transcriptText = offlineTranscript
-                    classViewModel?.updateRecording(recording)
-                    self.toastMessage = ToastMessage(message: "Transcript refined", icon: "checkmark.circle", type: .success)
-                }
-            } catch {
-                print("Offline transcript upgrade failed (non-fatal): \(error.localizedDescription)")
+        do {
+            let offlineTranscript = try await transcriptionService.transcribeAudioFile(url: audioURL)
+            if !offlineTranscript.isEmpty {
+                recording.transcriptText = offlineTranscript
+                toastMessage = ToastMessage(message: "Transcript refined — generating notes...", icon: "checkmark.circle", type: .success)
             }
-
-            self.isImprovingTranscript = false
+        } catch {
+            print("Offline transcript upgrade failed (non-fatal): \(error.localizedDescription)")
         }
+
+        isImprovingTranscript = false
     }
 
     // MARK: - Manual Gemini Audio Transcription

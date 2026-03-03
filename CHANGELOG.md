@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-03-03
+Reordered post-recording pipeline so on-device offline transcript pass completes before AI notes and flashcards are generated. Notes now always use the improved transcript, not the raw live one.
+
+## 2026-03-03
 Fixed transcript duplication bug: the accumulation heuristic was treating every minor model revision as a window slide, saving the transcript to baseTranscript and appending again. Fixed by requiring the result to be less than 50% of the previous length before treating it as a true reset. Also fixed a secondary bug where calling startTranscribing() twice would leave two results loops running in parallel.
 
 ## 2026-03-03
