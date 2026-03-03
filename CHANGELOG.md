@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-03-03
+Fixed transcript duplication bug: the accumulation heuristic was treating every minor model revision as a window slide, saving the transcript to baseTranscript and appending again. Fixed by requiring the result to be less than 50% of the previous length before treating it as a true reset. Also fixed a secondary bug where calling startTranscribing() twice would leave two results loops running in parallel.
+
+## 2026-03-03
 Added on-device SpeechAnalyzer offline transcript upgrade that runs automatically after every live recording (replacing legacy SFSpeechRecognizer). Added manual "Improve Transcript" button in the detail view that uploads audio to Gemini 2.5 Flash for the highest-quality transcript with punctuation and speaker labels (~$0.07/hr). Updated CLAUDE.md to require generating a Gemini Deep Research prompt whenever an API or SDK needs research before implementation.
 
 ## 2026-03-03

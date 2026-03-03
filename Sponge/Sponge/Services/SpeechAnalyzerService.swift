@@ -96,6 +96,12 @@ class SpeechAnalyzerService: ObservableObject {
         error = nil
         audioConverter = nil // Reset converter for fresh format detection
 
+        // Cancel any previous results loop before starting a new one.
+        // Without this, calling startTranscribing() twice would run two loops in parallel,
+        // both writing to transcribedText and causing duplication.
+        resultsTask?.cancel()
+        resultsTask = nil
+
         Task {
             do {
                 print("SpeechAnalyzer: Starting transcription...")
@@ -150,15 +156,20 @@ class SpeechAnalyzerService: ObservableObject {
                         for try await result in newTranscriber.results {
                             let newText = String(result.text.characters)
                             await MainActor.run {
-                                // SpeechAnalyzer may reset its internal state periodically
-                                // If the new text is shorter than what we had, it means a restart occurred
-                                // In that case, save current text and append new results
-                                if newText.count < self.lastResultLength && !self.transcribedText.isEmpty {
-                                    // Transcriber restarted - save accumulated text
+                                // Distinguish a true window slide from a model revision:
+                                // - Window slide: the transcriber resets its context and the new result
+                                //   is dramatically shorter (typically just the last few seconds of speech)
+                                // - Model revision: the model tweaks its hypothesis, text stays similar length
+                                //
+                                // Using < 50% of previous length as the threshold. Any shorter result
+                                // that doesn't meet this bar is treated as a revision and overwrites
+                                // the current window without duplicating into baseTranscript.
+                                let isWindowSlide = newText.count < (self.lastResultLength / 2) && self.lastResultLength > 20
+
+                                if isWindowSlide && !self.transcribedText.isEmpty {
                                     self.baseTranscript = self.transcribedText
                                 }
 
-                                // Combine base transcript with new text
                                 if self.baseTranscript.isEmpty {
                                     self.transcribedText = newText
                                 } else {
