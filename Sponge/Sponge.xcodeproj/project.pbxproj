@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1000004207E0001 /* SpongeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000005207E0001 /* SpongeUITests.swift */; };
 		C1000001207C0001 /* SpongeDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000002207C0001 /* SpongeDataModels.swift */; };
 		C1000003207C0001 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000004207C0001 /* PersistenceService.swift */; };
 		8A5048D72F33E39500EE01EC /* SharedAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5048D62F33E39500EE01EC /* SharedAudioManager.swift */; };
@@ -85,10 +86,19 @@
 		B100000A207B0001 /* EnhancedSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedSummaryView.swift; sourceTree = "<group>"; };
 		B100000C207B0001 /* RecallPromptsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecallPromptsView.swift; sourceTree = "<group>"; };
 		B100000E207B0001 /* RecordingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingDetailView.swift; sourceTree = "<group>"; };
+		E1000005207E0001 /* SpongeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpongeUITests.swift; sourceTree = "<group>"; };
+		E1000006207E0001 /* SpongeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpongeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A100001D207A0001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1000003207E0001 /* Frameworks (UITests) */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -102,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				A1000022207A0001 /* Sponge */,
+				E1000007207E0001 /* SpongeUITests */,
 				A1000023207A0001 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,8 +137,17 @@
 			isa = PBXGroup;
 			children = (
 				A1000020207A0001 /* Sponge.app */,
+				E1000006207E0001 /* SpongeUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E1000007207E0001 /* SpongeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E1000005207E0001 /* SpongeUITests.swift */,
+			);
+			path = SpongeUITests;
 			sourceTree = "<group>";
 		};
 		A1000024207A0001 /* Models */ = {
@@ -235,6 +255,23 @@
 			productReference = A1000020207A0001 /* Sponge.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E1000001207E0001 /* SpongeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1000008207E0001 /* Build configuration list for PBXNativeTarget "SpongeUITests" */;
+			buildPhases = (
+				E1000002207E0001 /* Sources */,
+				E1000003207E0001 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E100000B207E0001 /* PBXTargetDependency */,
+			);
+			name = SpongeUITests;
+			productName = SpongeUITests;
+			productReference = E1000006207E0001 /* SpongeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -247,6 +284,10 @@
 				TargetAttributes = {
 					A100001F207A0001 = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					E1000001207E0001 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = A100001F207A0001;
 					};
 				};
 			};
@@ -264,6 +305,7 @@
 			projectRoot = "";
 			targets = (
 				A100001F207A0001 /* Sponge */,
+				E1000001207E0001 /* SpongeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -278,6 +320,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXContainerItemProxy section */
+		E100000C207E0001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1000029207A0001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A100001F207A0001;
+			remoteInfo = Sponge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXTargetDependency section */
+		E100000B207E0001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A100001F207A0001 /* Sponge */;
+			targetProxy = E100000C207E0001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A100001E207A0001 /* Sources */ = {
@@ -319,6 +379,14 @@
 				B100000D207B0001 /* RecordingDetailView.swift in Sources */,
 				C1000001207C0001 /* SpongeDataModels.swift in Sources */,
 				C1000003207C0001 /* PersistenceService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1000002207E0001 /* Sources (UITests) */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1000004207E0001 /* SpongeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +571,36 @@
 			};
 			name = Release;
 		};
+		E1000009207E0001 /* Debug (UITests) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G8TSWK949Z;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ClassTranscriber.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Sponge;
+			};
+			name = Debug;
+		};
+		E100000A207E0001 /* Release (UITests) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G8TSWK949Z;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ClassTranscriber.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Sponge;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -520,6 +618,15 @@
 			buildConfigurations = (
 				A100002B207A0001 /* Debug */,
 				A100002C207A0001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1000008207E0001 /* Build configuration list for PBXNativeTarget "SpongeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1000009207E0001 /* Debug */,
+				E100000A207E0001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

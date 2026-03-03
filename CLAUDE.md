@@ -8,6 +8,34 @@ Sponge is a macOS lecture recording and AI-powered transcription app for student
 
 **Tech Stack:** SwiftUI + SwiftData (macOS 26+)
 
+## Autonomous Development Workflow
+
+After completing **any** code change (feature, fix, or refactor), ALWAYS run these steps before declaring done:
+
+### Step 1 — Build check (required, run first)
+```bash
+cd Sponge && xcodebuild -scheme Sponge -configuration Debug 2>&1 | grep -E "error:|BUILD" | tail -10
+```
+If the build fails, fix errors before proceeding.
+
+### Step 2 — Code review (run in parallel with build when possible)
+Spawn a general-purpose agent with this prompt:
+> "Review the following changed Swift files for bugs, SwiftUI/SwiftData anti-patterns, thread safety issues, and edge cases. Files changed: [list files]. Be concise — report only real problems, not style preferences."
+
+### Step 3 — Run the app (after build succeeds)
+```bash
+open /Users/danielwait/Library/Developer/Xcode/DerivedData/Sponge-abyqkaxkuzaomxcgonignswyrnps/Build/Products/Debug/Sponge.app
+```
+
+### Step 4 — Run UI tests (for changes that affect user-visible flows)
+```bash
+cd Sponge && xcodebuild test -scheme Sponge -testPlan SpongeUITests -destination "platform=macOS" 2>&1 | grep -E "Test (passed|failed|Suite|Case)|error:|BUILD" | tail -20
+```
+
+**Do not skip these steps.** The user wants to give direction and have the work verified autonomously.
+
+---
+
 ## Building & Running
 
 ```bash
