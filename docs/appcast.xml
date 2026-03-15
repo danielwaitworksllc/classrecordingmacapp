@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+    <channel>
+        <title>Sponge Updates</title>
+        <link>https://danielwaitworksllc.github.io/sponge/appcast.xml</link>
+        <description>Sponge app update feed</description>
+        <language>en</language>
+
+                                                                                        <item>
+            <title>Version 2.3</title>
+            <pubDate>Sun, 15 Mar 2026 22:43:40 +0000</pubDate>
+            <sparkle:version>59</sparkle:version>
+            <sparkle:shortVersionString>2.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure
+                url="https://github.com/danielwaitworksllc/sponge/releases/download/v2.3/Sponge-v2.3.zip"
+                sparkle:edSignature="EpOOfakWIWPy5IkqR0y4s9TCymXSuD6GQXU6QPCBB4j+e8tXtcFImc1Fn7ALGUbaXthni8lhEfM6LvD4OkuvAw=="
+                length="7251630"
+                type="application/octet-stream"
+            />
+        </item>
+
+<item>
+            <title>Version 2.2</title>
+            <pubDate>Fri, 13 Mar 2026 04:27:29 +0000</pubDate>
+            <sparkle:version>55</sparkle:version>
+            <sparkle:shortVersionString>2.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure
+                url="https://github.com/danielwaitworksllc/sponge/releases/download/v2.2/Sponge-v2.2.zip"
+                sparkle:edSignature="6KJHSVYQwH8a5qb24pEYc+VmDxXIs0tWcjm9mktd7Na5ff9xQlnmoSLoDM8Jc0CaHIV2clthQheIexVr6oleDQ=="
+                length="7248353"
+                type="application/octet-stream"
+            />
+        </item>
+
+<item>
+            <title>Version 2.1</title>
+            <pubDate>Fri, 13 Mar 2026 04:21:14 +0000</pubDate>
+            <sparkle:version>53</sparkle:version>
+            <sparkle:shortVersionString>2.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure
+                url="https://github.com/danielwaitworksllc/sponge/releases/download/v2.1/Sponge-v2.1.zip"
+                sparkle:edSignature="6WigPADokpfx1FOddxRpoLPufK/gTY1cA6gUSqHTvs5lpN8kiaOidpRHkNnU1ekM8SEqzxf4lUq4z+vvuZOiDA=="
+                length="7244966"
+                type="application/octet-stream"
+            />
+        </item>
+
+<item>
+            <title>Version 2.0</title>
+            <pubDate>Fri, 13 Mar 2026 00:47:47 +0000</pubDate>
+            <sparkle:version>52</sparkle:version>
+            <sparkle:shortVersionString>2.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure
+                url="https://github.com/danielwaitworksllc/sponge/releases/download/v2.0/Sponge-v2.0.zip"
+                sparkle:edSignature="r3ef9b5hzMzusetMqn5v/a6+TQHLWZz8zPZDzj/tx7juEGVdpFLDZsQmvDi5T5PiDznIoNasPy8oBy9yxYd+Dw=="
+                length="7344735"
+                type="application/octet-stream"
+            />
+        </item>
+
+<item>
+            <title>Version 1.9</title>
+            <pubDate>Thu, 12 Mar 2026 20:37:50 +0000</pubDate>
+            <sparkle:version>51</sparkle:version>
+            <sparkle:shortVersionString>1.9</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure
+                url="https://github.com/danielwaitworksllc/sponge/releases/download/v1.9/Sponge-v1.9.zip"
+                sparkle:edSignature="mldiY9aOZEvwA7aXu8Qcdbk41Fza7yCJoIHfiQAjjBG9yz4vmmyTw4ljdji1qYWsRElRpnMBPq0uEG4jaQBYCA=="
+                length="7339762"
+                type="application/octet-stream"
+            />
+        </item>
+
+<item>
+            <title>Version 1.8</title>
+            <pubDate>Thu, 12 Mar 2026 20:35:06 +0000</pubDate>
+            <sparkle:version>50</sparkle:version>
+            <sparkle:shortVersionString>1.8</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure
+                url="https://github.com/danielwaitworksllc/sponge/releases/download/v1.8/Sponge-v1.8.zip"
+                sparkle:edSignature="7snQ4TWs24Zp7kQmyjXjWJzZgsERGz+bWqoQW0ZVljEbbmKhywdhw2y4wBfdBoeJJ10vTvBe8modnXR9YTXkBw=="
+                length="7332183"
+                type="application/octet-stream"
+            />
+        </item>
+
+<item>
+            <title>Version 1.7</title>
+            <pubDate>Thu, 12 Mar 2026 20:31:35 +0000</pubDate>
+            <sparkle:version>49</sparkle:version>
+            <sparkle:shortVersionString>1.7</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure
+                url="https://github.com/danielwaitworksllc/sponge/releases/download/v1.7/Sponge-v1.7.zip"
+                sparkle:edSignature="9cImR+SH0W9/9Llhn7/fCP96Z6nUz+JNZAob0LilV5gjflx5qi+n/uKnepPCAKXp4bWmxYg+ouJ4ua5dsSU5Cw=="
+                length="7332163"
+                type="application/octet-stream"
+            />
+        </item>
+
+<item>
+            <title>Version 1.6</title>
+            <pubDate>Thu, 12 Mar 2026 20:28:13 +0000</pubDate>
+            <sparkle:version>48</sparkle:version>
+            <sparkle:shortVersionString>1.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure
+                url="https://github.com/danielwaitworksllc/sponge/releases/download/v1.6/Sponge-v1.6.zip"
+                sparkle:edSignature="lWhCV1r7myv+lz/j8U127CDHj9q0qGUWJGDs4pnf6cyHcj5OD0u9/l0RoexHdteLJTM5Vhc2ll+a0jPWTPBPBw=="
+                length="7331972"
+                type="application/octet-stream"
+            />
+        </item>
+
+<item>
+            <title>Version 1.5</title>
+            <pubDate>Thu, 12 Mar 2026 20:24:42 +0000</pubDate>
+            <sparkle:version>47</sparkle:version>
+            <sparkle:shortVersionString>1.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure
+                url="https://github.com/danielwaitworksllc/sponge/releases/download/v1.5/Sponge-v1.5.zip"
+                sparkle:edSignature="xj/JDCuoPuW3A6T6cjCxaMRqW+9l2HQ+yvDbnclFRzgtL+Xs8GyVtBAKeKgMqcIJwNL4bIFqnJdLLQlMsDlNAA=="
+                length="7303675"
+                type="application/octet-stream"
+            />
+        </item>
+
+<item>
+            <title>Version 1.4</title>
+            <pubDate>Thu, 12 Mar 2026 20:14:56 +0000</pubDate>
+            <sparkle:version>46</sparkle:version>
+            <sparkle:shortVersionString>1.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure
+                url="https://github.com/danielwaitworksllc/sponge/releases/download/v1.4/Sponge-v1.4.zip"
+                sparkle:edSignature="zXgUsaae9mGWL6ztEE0N3QdTSBudOIKmZg7dW+sZNrbmwvjnEbzfGrVWDYzyY+hPlB+YDMUeJWR3QwLszhBFBA=="
+                length="7213710"
+                type="application/octet-stream"
+            />
+        </item>
+
+<item>
+            <title>Version 1.2</title>
+            <pubDate>Thu, 12 Mar 2026 12:00:00 +0000</pubDate>
+            <sparkle:version>3</sparkle:version>
+            <sparkle:shortVersionString>1.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Whisper download progress indicator</li>
+                    <li>Onboarding improvements: microphone permission step, better API key flow</li>
+                    <li>Coral/cream theme applied consistently across all views</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                url="https://github.com/danielwaitworksllc/sponge/releases/download/v1.2.0/Sponge-v1.2.zip"
+                sparkle:edSignature="REPLACE_WITH_SIGNATURE_FROM_sign_update_TOOL"
+                length="REPLACE_WITH_ZIP_SIZE_IN_BYTES"
+                type="application/octet-stream"
+            />
+        </item>
+
+    </channel>
+</rss>
